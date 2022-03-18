@@ -27,8 +27,14 @@ Route::namespace('\App\Http\Controllers\Main')->group(function () {
 
 
 // Admin Routes (Back)
-Route::namespace('\App\Http\Controllers\Admin')->prefix('layouts')->group(function () {
+Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function () {
+    // Admin\Main
     Route::namespace('Main')->group(function () {
-        Route::get('/', 'IndexController')->name('layouts.main.index');
+        Route::get('/', 'IndexController')->name('admin.main.index');
     });
+    // Admin\Categories
+    Route::namespace('Category')->prefix('categories')->group(function () {
+        Route::get('/', 'IndexController')->name('admin.category.index');
+    });
+
 });
