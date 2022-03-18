@@ -6,7 +6,7 @@
 <section class="content">
     <div class="container-fluid">
         <h2 class="text-center">Categories</h2>
-        <p><a href="#" class="btn btn-success"><i class="fas fa-plus-square"></i> Add</a></p>
+        <p><a href="{{ route('admin.category.create') }}" class="btn btn-success"><i class="fas fa-plus-square"></i> Add</a></p>
         <table class="table">
             <thead>
             <tr>

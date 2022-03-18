@@ -35,6 +35,7 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function
     // Admin\Categories
     Route::namespace('Category')->prefix('categories')->group(function () {
         Route::get('/', 'IndexController')->name('admin.category.index');
+        Route::get('/create', 'CreateController')->name('admin.category.create');
     });
 
 });
