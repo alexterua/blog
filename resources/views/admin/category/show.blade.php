@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Add Category</h1>
+                <h1 class="m-0">Category Title</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -23,14 +23,16 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('admin.category.store') }}" method="post">
-            @csrf
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{ old('title' ?: '') }}">
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ $category->title }}</h5>
+
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
-        </form>
+        </div>
+
+        <a href="{{ route('admin.category.index') }}" class="btn btn-light">Back</a>
+
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->

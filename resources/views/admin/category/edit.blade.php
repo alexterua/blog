@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Add Category</h1>
+                <h1 class="m-0">Rename Category</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -23,14 +23,17 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('admin.category.store') }}" method="post">
+        <form action="{{ route('admin.category.update', $category->id) }}" method="post">
             @csrf
+            @method('PATCH')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{ old('title' ?: '') }}">
+                <input type="text" name="title" class="form-control" id="title" value="{{ $category->title }}">
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ route('admin.category.index') }}" class="btn btn-light float-right">Back</a>
         </form>
+
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
