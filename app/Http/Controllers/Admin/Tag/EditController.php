@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Tag;
 
 class EditController extends Controller
@@ -12,7 +13,8 @@ class EditController extends Controller
     {
         $tags = Tag::all();
         $categories = Category::all();
+        $posts = Post::all();
 
-        return view('admin.tag.edit', compact('tag', 'tags', 'categories'));
+        return view('admin.tag.edit', compact('tag', 'tags', 'categories', 'posts'));
     }
 }

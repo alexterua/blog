@@ -28,10 +28,12 @@ Route::namespace('\App\Http\Controllers\Main')->group(function () {
 
 // Admin Routes (Backend)
 Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function () {
+
     // Admin\Main
     Route::namespace('Main')->group(function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
+
     // Admin\Categories
     Route::namespace('Category')->prefix('categories')->group(function () {
         Route::get('/', 'IndexController')->name('admin.category.index');
@@ -42,6 +44,7 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function
         Route::patch('/{category}', 'UpdateController')->name('admin.category.update');
         Route::delete('/{category}', 'DestroyController')->name('admin.category.destroy');
     });
+
     // Admin\Tags
     Route::namespace('Tag')->prefix('tags')->group(function () {
         Route::get('/', 'IndexController')->name('admin.tag.index');
@@ -53,4 +56,14 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function
         Route::delete('/{tag}', 'DestroyController')->name('admin.tag.destroy');
     });
 
+    // Admin\Posts
+    Route::namespace('Post')->prefix('posts')->group(function () {
+        Route::get('/', 'IndexController')->name('admin.post.index');
+        Route::get('/create', 'CreateController')->name('admin.post.create');
+        Route::post('/', 'StoreController')->name('admin.post.store');
+        Route::get('/{post}', 'ShowController')->name('admin.post.show');
+        Route::get('/{post}/edit', 'EditController')->name('admin.post.edit');
+        Route::patch('/{post}', 'UpdateController')->name('admin.post.update');
+        Route::delete('/{post}', 'DestroyController')->name('admin.post.destroy');
+    });
 });

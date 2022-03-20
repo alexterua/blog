@@ -24,6 +24,15 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.post.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-clipboard"></i>
+                    <p>
+                        Posts
+                        <span class="badge badge-info right">{{ $posts->count() }}</span>
+                    </p>
+                </a>
+            </li>
 
         </ul>
     </div>

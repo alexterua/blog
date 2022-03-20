@@ -9,7 +9,7 @@ class DestroyController extends Controller
 {
     public function __invoke(Category $category)
     {
-        Category::where('id', $category->id)->delete();
+        $category->delete();
 
         return redirect()->route('admin.category.index');
     }

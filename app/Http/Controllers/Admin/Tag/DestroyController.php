@@ -9,7 +9,7 @@ class DestroyController extends Controller
 {
     public function __invoke(Tag $tag)
     {
-        Tag::where('id', $tag->id)->delete();
+        $tag->delete();
 
         return redirect()->route('admin.tag.index');
     }
