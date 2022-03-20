@@ -28,6 +28,11 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{ old('title' ?: '') }}">
+                @error('title')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

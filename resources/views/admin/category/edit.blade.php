@@ -29,6 +29,11 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" class="form-control" id="title" value="{{ $category->title }}">
+                @error('title')
+                <div class="alert alert-danger" role="alert">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{ route('admin.category.index') }}" class="btn btn-light float-right">Back</a>
