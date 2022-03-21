@@ -23,7 +23,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('admin.post.store') }}" method="post">
+        <form action="{{ route('admin.post.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 w-25">
                 <label for="title" class="form-label">Title</label>
@@ -42,6 +42,44 @@
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
+            <div class="mb-3 w-50">
+                <div class="form-group">
+                    <label for="image_preview">Image Preview</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="image_preview" class="custom-file-input" id="image_preview">
+                            <label class="custom-file-label" for="image_preview">Choose image Preview</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                        </div>
+                    </div>
+                    @error('image_preview')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="mb-3 w-50">
+                <div class="form-group">
+                    <label for="image_main">Image Main</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="image_main" class="custom-file-input" id="image_main">
+                            <label class="custom-file-label" for="image_main">Choose image Main</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                        </div>
+                    </div>
+                    @error('image_main')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

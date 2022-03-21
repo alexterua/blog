@@ -26,6 +26,8 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'required|string|max:255|unique:posts',
             'content' => 'required|string',
+            'image_preview' => 'required|file',
+            'image_main' => 'required|file',
         ];
     }
 }
