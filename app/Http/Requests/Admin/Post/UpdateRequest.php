@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'content' => 'required|string',
             'image_preview' => 'required|file',
             'image_main' => 'required|file',
+            'category_id' => 'required|exists:categories,id',
         ];
     }
 }

@@ -81,6 +81,19 @@
                     @enderror
                 </div>
             </div>
+            <div class="mb-3 w-50">
+                <!-- select -->
+                <div class="form-group">
+                    <label>Select Category</label>
+                    <select name="category_id" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}"
+                            {{ old('category_id') == $category->id ? 'selected' : '' }}
+                            >{{ $category->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
     </div><!-- /.container-fluid -->

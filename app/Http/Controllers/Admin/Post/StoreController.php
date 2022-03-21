@@ -12,7 +12,7 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-
+        dd($data);
         $data['image_preview'] = Storage::put('images/post_preview/', $data['image_preview']);
         $data['image_main'] = Storage::put('images/post_main/', $data['image_main']);
 
