@@ -23,7 +23,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('admin.post.update', $post->id) }}" method="post">
+        <form action="{{ route('admin.post.update', $post->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <div class="mb-3 w-25">
