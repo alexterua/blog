@@ -36,7 +36,7 @@ class PostService
             $data['image_preview'] = Storage::disk('public')->put('images/post_preview', $data['image_preview']);
             $data['image_main'] = Storage::disk('public')->put('images/post_main', $data['image_main']);
 
-            $post = $post->update($data);
+            $post->update($data);
             $post->tags()->sync($tagIds);
 
             return $post;
