@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PostService
@@ -12,6 +13,8 @@ class PostService
     public function store(array $data)
     {
         try {
+            DB::beginTransaction();
+
             if (isset($data['tag_ids'])) {
                 $tagIds = $data['tag_ids'];
                 unset($data['tag_ids']);
@@ -30,15 +33,19 @@ class PostService
                 $post->tags()->attach($tagIds);
             }
 
+            DB::commit();
             return true;
         } catch (\Exception $exception) {
-            abort(404);
+            DB::rollBack();
+            abort(500);
         }
     }
 
     public function update(array $data, Post $post)
     {
         try {
+            DB::beginTransaction();
+
             if (isset($data['tag_ids'])) {
                 $tagIds = $data['tag_ids'];
                 unset($data['tag_ids']);
@@ -57,10 +64,11 @@ class PostService
                 $post->tags()->sync($tagIds);
             }
 
-
+            DB::commit();
             return $post;
         } catch (\Exception $exception) {
-            abort(404);
+            DB::rollBack();
+            abort(500);
         }
     }
 }
