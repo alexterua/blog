@@ -47,7 +47,9 @@
             <div class="mb-3 w-50">
                 <div class="form-group">
                     <label for="image_preview">Image Preview</label>
-                    <img src="{{ url('storage/' . $post->image_preview) }}" class="card-img-top mb-2" alt="Preview image">
+                    <div class="w-25">
+                        <img src="{{ url('storage/' . $post->image_preview) }}" class="card-img-top mb-2" alt="Preview image">
+                    </div>
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="image_preview" class="custom-file-input" id="image_preview">
@@ -67,7 +69,9 @@
             <div class="mb-3 w-50">
                 <div class="form-group">
                     <label for="image_main">Image Main</label>
-                    <img src="{{ url('storage/' . $post->image_main) }}" class="card-img-top mb-2" alt="Main image">
+                    <div class="w-50">
+                        <img src="{{ url('storage/' . $post->image_main) }}" class="card-img-top mb-2" alt="Main image">
+                    </div>
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="image_main" class="custom-file-input" id="image_main">
@@ -119,7 +123,7 @@
                     @enderror
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{ route('admin.post.index') }}" class="btn btn-light float-right">Back</a>
         </form>
 
