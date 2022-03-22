@@ -25,6 +25,7 @@
     <div class="container-fluid">
 
         <div class="card">
+                <img src="{{ url('storage/' . $post->image_main) }}" class="card-img-top" alt="Main image">
             <div class="card-body">
                 <p class="card-text">{{ Str::of($post->content)->toHtmlString()}}</p>
             </div>
@@ -37,3 +38,4 @@
 <!-- /.content -->
 
 @endsection
+
