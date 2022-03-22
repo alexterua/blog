@@ -56,9 +56,9 @@
                         </div>
                     </div>
                     @error('image_preview')
-                    <div class="alert alert-danger" role="alert">
-                        {{ $message }}
-                    </div>
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
             </div>
@@ -75,16 +75,16 @@
                         </div>
                     </div>
                     @error('image_main')
-                    <div class="alert alert-danger" role="alert">
-                        {{ $message }}
-                    </div>
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
             </div>
             <div class="mb-3 w-50">
                 <!-- select -->
                 <div class="form-group">
-                    <label>Select Category</label>
+                    <label>Category</label>
                     <select name="category_id" class="form-control">
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}"
@@ -92,6 +92,28 @@
                             >{{ $category->title }}</option>
                         @endforeach
                     </select>
+                    @error('category_id')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+            <div class="mb-3 w-50">
+                <div class="form-group">
+                    <label>Tags</label>
+                    <select name="tag_ids[]" class="select2" multiple="multiple" data-placeholder="Select Tags" style="width: 100%;">
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}"
+                            {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }}
+                            >{{ $tag->title }}</option>
+                        @endforeach
+                    </select>
+                    @error('tags')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
