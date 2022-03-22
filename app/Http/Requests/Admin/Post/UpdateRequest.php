@@ -26,8 +26,8 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'image_preview' => 'required|file|image',
-            'image_main' => 'required|file|image',
+            'image_preview' => 'nullable|file|image',
+            'image_main' => 'nullable|file|image',
             'category_id' => 'required|exists:categories,id|numeric',
             'tag_ids' => 'nullable|array',
             'tag_id.*' => 'nullable|exists:tags,id|numeric',
