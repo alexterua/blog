@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Models\User;
 
-class CreateController extends Controller
+class IndexController extends Controller
 {
     public function __invoke()
     {
+        $users = User::all();
         $categories = Category::all();
         $tags = Tag::all();
         $posts = Post::all();
-        $users = User::all();
 
-        return view('admin.category.create', compact('categories', 'tags', 'posts', 'users'));
+        return view('admin.user.index', compact('users', 'categories', 'tags', 'posts'));
     }
 }

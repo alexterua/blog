@@ -12,7 +12,7 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
 
-        $tag = $tag->update($data);
+        $tag->update($data);
 
         return redirect()->route('admin.tag.index');
     }

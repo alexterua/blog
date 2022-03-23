@@ -7,6 +7,15 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-header">ADMIN PANEL</li>
             <li class="nav-item">
+                <a href="{{ route('admin.user.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Users
+                        <span class="badge badge-info right">{{ $users->count() }}</span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.category.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-th-list"></i>
                     <p>
