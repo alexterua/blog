@@ -16,6 +16,8 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <a href="{{ route('admin.main.index') }}" class="btn btn-primary">Go to AdminPanel</a>
             </div>
         </div>
     </div>

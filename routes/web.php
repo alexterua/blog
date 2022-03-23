@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +27,7 @@ Route::namespace('\App\Http\Controllers\Main')->group(function () {
 
 
 // Admin Routes (Backend)
-Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->group(function () {
+Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     // Admin\Main
     Route::namespace('Main')->group(function () {

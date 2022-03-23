@@ -31,12 +31,21 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light d-flex justify-content-between">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
         </ul>
+            <form action="{{ route('logout') }}" method="post" class="nav-item d-flex justify-content-between">
+                @csrf
+                <button type="submit" class="btn btn-outline-dark">
+                    Logout
+                </button>
+            </form>
+
+        </div>
 
     </nav>
     <!-- /.navbar -->
