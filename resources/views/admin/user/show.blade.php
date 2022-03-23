@@ -27,6 +27,7 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">User Name: {{ $user->name }}</h5>
+                <br>
                 <h6 class="card-title">Email: {{ $user->email }}</h6>
             </div>
         </div>

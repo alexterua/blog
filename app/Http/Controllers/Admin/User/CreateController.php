@@ -16,7 +16,8 @@ class CreateController extends Controller
         $categories = Category::all();
         $tags = Tag::all();
         $posts = Post::all();
+        $roles = User::getRoles();
 
-        return view('admin.user.create', compact('users', 'categories', 'tags', 'posts'));
+        return view('admin.user.create', compact('users', 'categories', 'tags', 'posts', 'roles'));
     }
 }

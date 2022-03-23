@@ -52,6 +52,24 @@
                 </div>
                 @enderror
             </div>
+            <div class="mb-3 w-50">
+                <!-- select -->
+                <div class="form-group">
+                    <label>Select Role</label>
+                    <select name="role" class="form-control">
+                        @foreach($roles as $id => $role)
+                            <option value="{{ $id }}"
+                                {{ old('role') == $id ? 'selected' : '' }}
+                            >{{ $role }}</option>
+                        @endforeach
+                    </select>
+                    @error('role')
+                    <div class="alert alert-danger" role="alert">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
     </div><!-- /.container-fluid -->
