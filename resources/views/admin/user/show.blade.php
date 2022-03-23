@@ -29,6 +29,12 @@
                 <h5 class="card-title">User Name: {{ $user->name }}</h5>
                 <br>
                 <h6 class="card-title">Email: {{ $user->email }}</h6>
+                <br>
+                @foreach($roles as $id => $role)
+                    @if($id == $user->role)
+                        <h6 class="card-title">Role: {{ $role }}</h6>
+                    @endif
+                @endforeach
             </div>
         </div>
 
