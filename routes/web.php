@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Home Page
 Route::get('/home', ['App\Http\Controllers\HomeController', 'index'])->name('home');
@@ -27,7 +27,7 @@ Route::namespace('\App\Http\Controllers\Main')->group(function () {
 
 
 // Admin Routes (Backend)
-Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['auth', 'admin', 'verified'])->group(function () {
 
     // Admin\Main
     Route::namespace('Main')->group(function () {
