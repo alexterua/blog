@@ -16,8 +16,10 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-
-                <a href="{{ route('admin.main.index') }}" class="btn btn-primary">Go to AdminPanel</a>
+                {{-- If user is admin, show link to admin panel --}}
+                @if (auth()->user()->role === 1)
+                    <a href="{{ route('admin.main.index') }}" class="btn btn-primary">Go to AdminPanel</a>
+                @endif
             </div>
         </div>
     </div>

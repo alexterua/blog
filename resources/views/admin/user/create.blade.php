@@ -43,15 +43,6 @@
                 </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" value="{{ old('password' ?: '') }}">
-                @error('password')
-                <div class="alert alert-danger" role="alert">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
             <div class="mb-3 w-50">
                 <!-- select -->
                 <div class="form-group">
