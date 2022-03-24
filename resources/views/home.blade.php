@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('You are logged in!') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,13 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    {{-- If user is admin, show link to admin panel --}}
+                    @if (auth()->user()->role === 0)
+                        <a href="{{ route('admin.main.index') }}" class="btn btn-dark">Go to Admin Panel</a>
+                    @endif
+                        <a href="{{ route('main.index') }}" class="btn btn-primary">Go to Site</a>
                 </div>
-                {{-- If user is admin, show link to admin panel --}}
-                @if (auth()->user()->role === 1)
-                    <a href="{{ route('admin.main.index') }}" class="btn btn-primary">Go to AdminPanel</a>
-                @endif
+
             </div>
         </div>
     </div>

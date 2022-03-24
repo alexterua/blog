@@ -78,3 +78,5 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['a
         Route::delete('/{user}', 'DestroyController')->name('admin.user.destroy');
     });
 });
+
+
