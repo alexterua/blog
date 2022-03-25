@@ -14,7 +14,8 @@ class IndexController extends Controller
     public function __invoke()
     {
         $likedPosts = auth()->user()->likedPosts;
+        $comments = auth()->user()->comments;
 
-        return view('profile.liked.index', compact('likedPosts'));
+        return view('profile.liked.index', compact('likedPosts', 'comments'));
     }
 }
