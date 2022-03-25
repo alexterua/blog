@@ -20,13 +20,13 @@ Auth::routes(['verify' => true]);
 Route::get('/home', ['App\Http\Controllers\HomeController', 'index'])->name('home');
 
 
-// Main Routes (Frontend)
+// Main Routes
 Route::namespace('\App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
 
-// Admin Routes (Backend)
+// Admin Routes
 Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['auth', 'admin', 'verified'])->group(function () {
 
     // Admin\Main
@@ -80,3 +80,22 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['a
 });
 
 
+// User Profile
+Route::namespace('\App\Http\Controllers\Profile')->prefix('profile')->middleware(['auth', 'verified'])->group(function () {
+
+    // Profile\Main
+    Route::namespace('Main')->group(function () {
+        Route::get('/', 'IndexController')->name('profile.main.index');
+    });
+
+    // Profile\Liked
+    Route::namespace('Like')->prefix('liked')->group(function () {
+        Route::get('/', 'IndexController')->name('profile.liked.index');
+    });
+
+    // Profile\Comment
+    Route::namespace('Comment')->prefix('comment')->group(function () {
+        Route::get('/', 'IndexController')->name('profile.comment.index');
+    });
+
+});
