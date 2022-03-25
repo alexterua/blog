@@ -7,7 +7,7 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-header">USER PROFILE</li>
             <li class="nav-item">
-                <a href="{{ route('admin.user.index') }}" class="nav-link">
+                <a href="{{ route('profile.liked.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-heart"></i>
                     <p>
                         Likes
@@ -16,11 +16,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.category.index') }}" class="nav-link">
+                <a href="{{ route('profile.comment.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-comments"></i>
                     <p>
                         Comments
-                        <span class="badge badge-info right">3</span>
+                        <span class="badge badge-info right">{{ $comments->count() }}</span>
                     </p>
                 </a>
             </li>

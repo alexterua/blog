@@ -91,11 +91,15 @@ Route::namespace('\App\Http\Controllers\Profile')->prefix('profile')->middleware
     // Profile\Liked
     Route::namespace('Like')->prefix('liked')->group(function () {
         Route::get('/', 'IndexController')->name('profile.liked.index');
+        Route::delete('/{post}', 'DestroyController')->name('profile.liked.destroy');
     });
 
     // Profile\Comment
     Route::namespace('Comment')->prefix('comment')->group(function () {
         Route::get('/', 'IndexController')->name('profile.comment.index');
+        Route::get('/{comment}/edit', 'EditController')->name('profile.comment.edit');
+        Route::patch('/{comment}', 'UpdateController')->name('profile.comment.update');
+        Route::delete('/{comment}', 'DestroyController')->name('profile.comment.destroy');
     });
 
 });

@@ -25,7 +25,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>3</h3>
+                        <h3>{{ $comments->count() }}</h3>
 
                         <p>Comments</p>
                     </div>

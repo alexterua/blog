@@ -8,21 +8,21 @@
             <thead>
             <tr>
                 <th scope="col">№</th>
-                <th scope="col">Title</th>
+                <th scope="col">Message</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($likedPosts as $likedPost)
+            @foreach($comments as $comment)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $likedPost->title }}</td>
+                    <td>{{ $comment->message }}</td>
                     <td>
-                        <a href="{{ route('admin.post.show', $likedPost->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
-                        <form action="{{ route('profile.liked.destroy', $likedPost->id) }}" method="post" style="display: inline-block;">
+                        <a href="{{ route('profile.comment.edit', $comment->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('profile.comment.destroy', $comment->id) }}" method="post" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button>
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
