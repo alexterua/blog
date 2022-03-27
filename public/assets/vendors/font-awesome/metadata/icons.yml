@@ -9219,7 +9219,7 @@ hammer:
   label: Hammer
   search:
     terms:
-      - layouts
+      - admin
       - fix
       - repair
       - settings
@@ -11715,7 +11715,7 @@ lock:
   label: lock
   search:
     terms:
-      - layouts
+      - admin
       - lock
       - open
       - password
@@ -11734,7 +11734,7 @@ lock-open:
   label: Lock Open
   search:
     terms:
-      - layouts
+      - admin
       - lock
       - open
       - password
@@ -15834,7 +15834,7 @@ screwdriver:
   label: Screwdriver
   search:
     terms:
-      - layouts
+      - admin
       - fix
       - mechanic
       - repair
@@ -19051,7 +19051,7 @@ toolbox:
   label: Toolbox
   search:
     terms:
-      - layouts
+      - admin
       - container
       - fix
       - repair
@@ -19068,7 +19068,7 @@ tools:
   label: Tools
   search:
     terms:
-      - layouts
+      - admin
       - fix
       - repair
       - screwdriver
@@ -19762,7 +19762,7 @@ unlock:
   label: unlock
   search:
     terms:
-      - layouts
+      - admin
       - lock
       - password
       - private
@@ -19778,7 +19778,7 @@ unlock-alt:
   label: Alternate Unlock
   search:
     terms:
-      - layouts
+      - admin
       - lock
       - password
       - private
@@ -19965,7 +19965,7 @@ user-cog:
   label: User Cog
   search:
     terms:
-      - layouts
+      - admin
       - cog
       - person
       - settings
@@ -20044,7 +20044,7 @@ user-lock:
   label: User Lock
   search:
     terms:
-      - layouts
+      - admin
       - lock
       - person
       - private
@@ -20165,7 +20165,7 @@ user-shield:
   label: User Shield
   search:
     terms:
-      - layouts
+      - admin
       - person
       - private
       - protect
@@ -20261,7 +20261,7 @@ users-cog:
   label: Users Cog
   search:
     terms:
-      - layouts
+      - admin
       - cog
       - group
       - person
