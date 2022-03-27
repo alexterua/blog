@@ -25,6 +25,12 @@ Route::namespace('\App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
+// Post Routes
+Route::namespace('\App\Http\Controllers\Post')->prefix('posts')->group(function () {
+    Route::get('/', 'IndexController')->name('post.index');
+    Route::get('/{post}', 'ShowController')->name('post.show');
+});
+
 
 // Admin Routes
 Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['auth', 'admin', 'verified'])->group(function () {
