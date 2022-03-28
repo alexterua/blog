@@ -41,15 +41,12 @@
                 <a class="btn btn-outline-dark" href="{{ route('main.index') }}">Go to Site</a>
             </li>
         </ul>
-            <form action="{{ route('logout') }}" method="post" class="nav-item d-flex justify-content-between">
-                @csrf
-                <button type="submit" class="btn btn-outline-dark">
-                    Logout
-                </button>
-            </form>
-
-        </div>
-
+        <form action="{{ route('logout') }}" method="post" class="nav-item d-flex justify-content-between">
+            @csrf
+            <button type="submit" class="btn btn-outline-dark">
+                Logout
+            </button>
+        </form>
     </nav>
     <!-- /.navbar -->
 

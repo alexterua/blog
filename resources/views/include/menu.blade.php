@@ -27,7 +27,12 @@
                     <a class="nav-link" href="{{ route('profile.main.index') }}"><i class="fas fa-user mr-2"></i>User Cabinet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                    <form action="{{ route('logout') }}" method="post" class="nav-item d-flex justify-content-between">
+                        @csrf
+                        <button type="submit" class="nav-link btn">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                        </button>
+                    </form>
                 </li>
             @endauth
             @guest()
