@@ -15,11 +15,22 @@
                         {!! $post->content  !!}
                     </div>
                 </div>
+                @auth()
+                    <h3 class="text-center mb-3">Comments</h3>
+                    @foreach($post->comments as $comment)
+                        <div class="row">
+                            <blockquote data-aos="fade-up">
+                                <p>{{ $comment->message }}</p>
+                                <footer class="blockquote-footer">{{ $comment->user->name }} | {{ $comment->getDateAsCarbon()->diffForHumans() }}</footer>
+                            </blockquote>
+                        </div>
+                    @endforeach
+                @endauth
             </section>
             <div class="row">
                 <div class="col-lg-9 mx-auto">
                     <section class="related-posts">
-                        <h2 class="section-title mb-4" data-aos="fade-up">Related Posts</h2>
+                        <h2 class="section-title mb-4 text-center" data-aos="fade-up">Related Posts</h2>
                             <div class="row">
                             @foreach($relatedPosts as $relatedPost)
                                 <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
@@ -31,27 +42,13 @@
                             </div>
                     </section>
                     <section class="comment-section">
-                        <h2 class="section-title mb-5" data-aos="fade-up">Leave a comment</h2>
-                        <form action="/" method="post">
+                        <h2 class="section-title mb-5 text-center" data-aos="fade-up">Leave a Comment</h2>
+                        <form action="{{ route('post.comment.store', $post->id) }}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-12" data-aos="fade-up">
                                     <label for="comment" class="sr-only">Comment</label>
-                                    <textarea name="comment" id="comment" class="form-control" placeholder="Comment" rows="10">Comment</textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-4" data-aos="fade-right">
-                                    <label for="name" class="sr-only">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name*">
-                                </div>
-                                <div class="form-group col-md-4" data-aos="fade-up">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email*" required>
-                                </div>
-                                <div class="form-group col-md-4" data-aos="fade-left">
-                                    <label for="website" class="sr-only">Website</label>
-                                    <input type="url" name="website" id="website" class="form-control" placeholder="Website*">
+                                    <textarea name="message" id="comment" class="form-control" placeholder="Comment" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="row">

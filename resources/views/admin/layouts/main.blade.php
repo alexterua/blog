@@ -37,6 +37,9 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-dark" href="{{ route('main.index') }}">Go to Site</a>
+            </li>
         </ul>
             <form action="{{ route('logout') }}" method="post" class="nav-item d-flex justify-content-between">
                 @csrf

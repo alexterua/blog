@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row footer-widget-area">
             <div class="col-md-3">
-                <a href="index.html" class="footer-brand-wrapper">
+                <a href="{{ route('main.index') }}" class="footer-brand-wrapper">
                     <img src="{{ asset('assets/images/logo.svg') }}" alt="edica logo">
                 </a>
                 <p class="contact-details">hello@edica.com</p>
