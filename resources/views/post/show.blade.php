@@ -4,7 +4,7 @@
 
     <main class="blog-post">
         <div class="container">
-            <h1 class="edica-page-title" data-aos="fade-up">{{ $post->title }}</h1>
+            <h1 class="edica-page-title" data-aos="fade-up" style="padding-top: 50px;">{{ $post->title }}</h1>
             <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200">{{ $dateUpdated->format('M d, Y • h:i a') }} • {{ $post->category->title }} • {{ $post->comments->count() }} Comments</p>
             <section class="blog-post-featured-img" data-aos="fade-up" data-aos-delay="300">
                 <img src="{{ asset('storage/' . $post->image_main) }}" alt="{{ $post->title }}" class="w-100">

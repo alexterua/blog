@@ -4,7 +4,7 @@
 
     <main class="blog">
         <div class="container">
-            <h1 class="edica-page-title" data-aos="fade-up">Blog</h1>
+            <h1 class="edica-page-title" data-aos="fade-up" style="padding-top: 50px; padding-bottom: 50px;">Blog</h1>
             <section class="featured-posts-section">
                 <div class="row">
                     @foreach($posts as $post)
